@@ -44,7 +44,7 @@ public class APIHandler {
                 String name = ecoList.getJSONObject(i).getString("ticker");
 
                     if (name.equals("USD/SEK")) {
-                        Float changeVal = ecoList.getJSONObject(i).getFloat("changes");
+                        Float changeVal = ecoList.getJSONObject(i).getFloat("bid");
                         return (changeVal);
                     }
             }
