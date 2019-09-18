@@ -24,7 +24,12 @@ public class Main {
         Timer timer = new Timer();
 
         timer.scheduleAtFixedRate(new TimerTask() {
+
             public void run() {
+
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+                System.out.println("SEK/USD");
                 current = api.call();
 
                 if (current > prev) {
@@ -40,10 +45,14 @@ public class Main {
                         }
 
                              prev = current;
+
+
             }
         }, delay, interval); // end timer
 
 
     }
+
+
 
 }
